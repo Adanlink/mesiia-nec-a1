@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785b45e6-71ed-4c64-be05-c9ebbee126a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NeuralNet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part3-notebook.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showcase_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/showcase_distribution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NeuralNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/NeuralNet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/part3-notebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/part3-notebook.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +36,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.NeuralNet.executor": "Debug",
     "Python.preprocess_dataset.executor": "Run",
     "Python.preprocess_dataset_for_dist.executor": "Run",
     "Python.showcase_distribution.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "database.data.extractors.current.export.id": "Excel (xlsx)",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "D:/repos/MESIIA-NEC-Activity1",
     "node.js.detected.package.eslint": "true",
@@ -77,25 +78,16 @@
       <option name="presentableId" value="Default" />
       <updated>1733602464044</updated>
       <workItem from="1733602465068" duration="6227000" />
-      <workItem from="1733653187943" duration="24790000" />
+      <workItem from="1733653187943" duration="28183000" />
+      <workItem from="1733691511623" duration="6302000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/NeuralNet.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MESIIA_NEC_Activity1$NeuralNet.coverage" NAME="NeuralNet Coverage Results" MODIFIED="1733691083345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MESIIA_NEC_Activity1$preprocess_dataset.coverage" NAME="preprocess_dataset Coverage Results" MODIFIED="1733666473492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MESIIA_NEC_Activity1$preprocess_dataset_for_dist.coverage" NAME="preprocess_dataset_for_dist Coverage Results" MODIFIED="1733661497395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MESIIA_NEC_Activity1$showcase_distribution.coverage" NAME="showcase_distribution Coverage Results" MODIFIED="1733670415199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

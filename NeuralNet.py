@@ -5,6 +5,8 @@ class NeuralNet:
         """
         Initialize the neural network structure and hyperparameters.
         """
+        np.random.seed(42)
+
         self.L = len(layers)                        # Number of layers
         self.n = layers                             # Units in each layer
         self.epochs = epochs                        # Number of epochs
@@ -98,15 +100,50 @@ class NeuralNet:
             np.random.shuffle(indices)
             X_shuffled, y_shuffled = X_train[indices], y_train[indices]
 
-            # Train on each pattern
-            for x_sample, y_sample in zip(X_shuffled, y_shuffled):
-                self.feed_forward(x_sample)
-                self.back_propagate(x_sample, y_sample)
+            # Perform feed-forward and back-propagation on all training data
+            self.feed_forward_batch(X_shuffled)
+            self.back_propagate_batch(X_shuffled, y_shuffled)
 
             # Compute training loss
-            train_loss = self.compute_loss(X_train, y_train)
-            val_loss = self.compute_loss(X_val, y_val) if X_val is not None else None
+            train_loss = self.compute_loss_batch(X_train, y_train)
+            val_loss = self.compute_loss_batch(X_val, y_val) if X_val is not None else None
             self.loss_history.append((train_loss, val_loss))
+
+    def feed_forward_batch(self, X):
+        """
+        Perform feed-forward propagation for a batch of inputs.
+        """
+        self.xi[0] = X.T  # Input layer (transpose for matrix operations)
+        for l in range(1, self.L):
+            self.h[l] = self.w[l] @ self.xi[l - 1] - self.theta[l][:, np.newaxis]
+            self.xi[l] = self.g(self.h[l])
+
+    def back_propagate_batch(self, X, y):
+        """
+        Perform back-propagation to update weights and thresholds for a batch.
+        """
+        m = X.shape[0]  # Number of samples in the batch
+
+        # Output layer errors
+        delta_L = (self.xi[-1] - y.T) * self.g_prime(self.h[-1])
+        self.delta[-1] = delta_L
+
+        # Propagate errors backward
+        for l in range(self.L - 2, 0, -1):
+            self.delta[l] = (self.w[l + 1].T @ self.delta[l + 1]) * self.g_prime(self.h[l])
+
+        # Update weights and thresholds
+        for l in range(1, self.L):
+            # Compute weight and bias updates
+            d_w_l = -self.lr * (self.delta[l] @ self.xi[l - 1].T) / m + self.momentum * self.d_w_prev[l]
+            d_theta_l = -self.lr * np.sum(self.delta[l], axis=1) / m + self.momentum * self.d_theta_prev[l]
+
+            # Apply updates to weights and biases
+            self.w[l] += d_w_l
+            self.theta[l] += d_theta_l
+
+            # Store updates for momentum
+            self.d_w_prev[l], self.d_theta_prev[l] = d_w_l, d_theta_l
 
     def feed_forward(self, x):
         """
@@ -123,22 +160,40 @@ class NeuralNet:
         """
         Perform back-propagation to update weights and thresholds.
         """
-        # Output layer errors
+        # Compute output layer error (delta)
         self.delta[-1] = self.g_prime(self.h[-1]) * (self.xi[-1] - y)
 
-        # Propagate errors backward
+        # Backpropagate errors through the hidden layers
         for l in range(self.L - 2, 0, -1):
-            self.delta[l] = self.g_prime(self.h[l]) * (self.w[l + 1].T @ self.delta[l + 1])
+            self.delta[l] = (self.w[l + 1].T @ self.delta[l + 1]) * self.g_prime(self.h[l])
 
-        # Update weights and thresholds
+        # Update weights and biases
         for l in range(1, self.L):
+            # Compute weight and bias updates
             self.d_w[l] = -self.lr * np.outer(self.delta[l], self.xi[l - 1]) + self.momentum * self.d_w_prev[l]
-            self.d_theta[l] = self.lr * self.delta[l] + self.momentum * self.d_theta_prev[l]
+            self.d_theta[l] = -self.lr * self.delta[l] + self.momentum * self.d_theta_prev[l]
 
+            # Apply updates to weights and biases
             self.w[l] += self.d_w[l]
             self.theta[l] += self.d_theta[l]
 
+            # Store updates for momentum
             self.d_w_prev[l], self.d_theta_prev[l] = self.d_w[l], self.d_theta[l]
+
+    def compute_loss_batch(self, X, y):
+        """
+        Compute quadratic error loss for a batch of inputs.
+        """
+        if X is None or y is None:
+            return None
+
+        # Perform feed-forward for all samples in the batch
+        self.feed_forward_batch(X)
+
+        # Compute mean squared error loss (vectorized)
+        errors = self.xi[-1] - y.T
+        total_loss = 0.5 * np.sum(errors**2) / X.shape[0]
+        return total_loss
 
     def compute_loss(self, X, y):
         """
@@ -155,10 +210,11 @@ class NeuralNet:
         Predict outputs for the given input.
         """
         predictions = []
-        for x in X:
-            self.feed_forward(x)
-            predictions.append(self.xi[-1])
-        return np.array(predictions)
+        # for x in X:
+        #     self.feed_forward_batch(x)
+        #     predictions.append(self.xi[-1])
+        self.feed_forward_batch(X)
+        return self.xi[-1].T
 
     def loss_epochs(self):
         """
