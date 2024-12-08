@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler, StandardScaler, PowerTransformer
 from sklearn.impute import SimpleImputer
 
 # Load the dataset
@@ -28,10 +27,5 @@ non_outliers = data[~outliers]
 print("Amount of outliers rows removed: ", len(data) - len(non_outliers))
 data = non_outliers
 
-# 4. Normalize/Scale the Data
-# Normalize numerical features using Min-Max Scaling
-# scaler = MinMaxScaler()
-# data[numerical_columns] = scaler.fit_transform(data[numerical_columns])
-
 # Save the preprocessed data to a new CSV file
-data.to_csv("data/preprocessed_data.csv", index=False)
+data.to_csv("data/preprocessed_data_for_dist.csv", index=False)
