@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785b45e6-71ed-4c64-be05-c9ebbee126a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Python.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MESIIA-NEC-Activity1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MESIIA-NEC-Activity1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NeuralNet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/part3-notebook.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocess_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocess_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocess_dataset_for_dist.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocess_dataset_for_dist.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/showcase_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/showcase_distribution.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -78,16 +77,27 @@
       <option name="presentableId" value="Default" />
       <updated>1733602464044</updated>
       <workItem from="1733602465068" duration="6227000" />
-      <workItem from="1733653187943" duration="10900000" />
+      <workItem from="1733653187943" duration="24790000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/NeuralNet.py</url>
+          <line>96</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MESIIA_NEC_Activity1$preprocess_dataset.coverage" NAME="preprocess_dataset Coverage Results" MODIFIED="1733666473492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MESIIA_NEC_Activity1$preprocess_dataset_for_dist.coverage" NAME="preprocess_dataset_for_dist Coverage Results" MODIFIED="1733661497395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MESIIA_NEC_Activity1$showcase_distribution.coverage" NAME="showcase_distribution Coverage Results" MODIFIED="1733658820461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MESIIA_NEC_Activity1$showcase_distribution.coverage" NAME="showcase_distribution Coverage Results" MODIFIED="1733670415199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

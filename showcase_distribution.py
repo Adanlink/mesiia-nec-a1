@@ -12,7 +12,7 @@ numerical_columns = df.select_dtypes(include=["float64", "int64"]).columns
 
 # Set up the plotting grid
 num_cols = len(numerical_columns)
-fig, axes = plt.subplots(nrows=(num_cols // 3) + 1, ncols=3, figsize=(15, 5 * ((num_cols // 3) + 1)))
+fig, axes = plt.subplots(nrows=(num_cols // 4) + 1, ncols=4, figsize=(20, 5 * ((num_cols // 4) + 1)))
 axes = axes.flatten()
 
 # Plot histograms and check normality for each numerical column
